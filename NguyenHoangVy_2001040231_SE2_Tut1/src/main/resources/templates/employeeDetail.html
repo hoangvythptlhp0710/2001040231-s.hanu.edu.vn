@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Employee Detail</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+</head>
+<body>
+    <div class="container col-md-5 text-center mt-4">
+        <h2 class="text text-primary mb-4">Employee Detail</h2>
+        <div class="col">
+            <img th:src="${employee.image}" width="200" height="200">
+        </div>
+        <div class="col">
+            <h1 class="text-success" th:text="${employee.name}"></h1>
+            <h3 th:text="'Age: + ' + ${employee.age}"></h3>
+            <h3 th:text="'Address: ' + ${employee.address}"></h3>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="_layout">
+<head>
+    <meta charset="UTF-8">
+    <title>Company List</title>
+</head>
+<body>
+    <div layout:fragment="content" class="container col-md-5 text-center mt-4">
+        <h2 class="text text-primary mb-4">COMPANY LIST</h2>
+        <div class="row bg-light">
+            <div class="col">
+                <table class="table table-striped">
+                    <thead>
+                    <tr>
+                        <th scope="col">Name</th>
+                        <th scope="col">Address</th>
+                        <th scope="col">Phone</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr th:each="company : ${companies}">
+                        <td th:text="${company.name}"></td>
+                        <td th:text="${company.address}"></td>
+                        <td th:text="${company.phone}"></td>
+                        <td>
+                            <a class="btn btn-outline-success" th:href="@{/company/detail/{id}(id=${company.id})}" th:text="'Detail'"></a>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
